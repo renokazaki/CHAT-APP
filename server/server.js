@@ -21,12 +21,20 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
     console.log("client coonect");
-
-  socket.on("send_message", (data) => {
-    io.emit("new_message", data);
-    console.log(data);
-
-  });
+    socket.on ("value",value => {
+      console.log(value)
+      io.emit("value",value);
+  })
+  //クライアントから受信
+  socket.on ("user",user => {
+      console.log(user)
+      io.emit("user",user);
+  })
+  
+  socket.on("reset", user => {
+      console.log("リセットイベント受信");
+      io.emit("reset", user);
+  })
 
   socket.on("disconnect", () => {
     console.log("client disconnected");
