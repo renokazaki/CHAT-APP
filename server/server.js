@@ -7,14 +7,14 @@ const app = express();
 const port = process.env.PORT || 5000;
 const staticPath = path.resolve(__dirname, "dist");
 
-// setup middleware
+// setup middleware 
 app.use(express.static(staticPath));
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-app-5y9l.onrender.com",
     methods: ["GET", "POST"],
   },
 });
