@@ -9,6 +9,9 @@ const App = () => {
 };
 export default App;
 
+//以下はチャットのソース
+//動作確認済
+
 // import "./App.css";
 // import io from "socket.io-client";
 // import { useState, useEffect } from "react";

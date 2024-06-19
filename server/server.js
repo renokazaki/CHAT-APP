@@ -19,6 +19,8 @@ const io = new Server(server, {
   },
 });
 
+//チャットアプリから以下のonとemitのみ修正
+
 io.on("connection", (socket) => {
     console.log("client coonect");
     socket.on ("value",value => {
